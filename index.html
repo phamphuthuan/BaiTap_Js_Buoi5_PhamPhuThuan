@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="project">
+      <div class="container">
+        <div class="project__tab">
+          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                id="pills-bai1-tab"
+                data-toggle="pill"
+                href="#pills-bai1"
+                role="tab"
+                aria-controls="pills-bai1"
+                aria-selected="true"
+                >Bài 1</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="pills-bai2-tab"
+                data-toggle="pill"
+                href="#pills-bai2"
+                role="tab"
+                aria-controls="pills-bai2"
+                aria-selected="false"
+                >Bài 2</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="pills-bai3-tab"
+                data-toggle="pill"
+                href="#pills-bai3"
+                role="tab"
+                aria-controls="pills-bai3"
+                aria-selected="false"
+                >Bài 3</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="pills-bai4-tab"
+                data-toggle="pill"
+                href="#pills-bai4"
+                role="tab"
+                aria-controls="pills-bai4"
+                aria-selected="false"
+                >Bài 4</a
+              >
+            </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="pills-bai1"
+              role="tabpanel"
+              aria-labelledby="pills-bai1-tab"
+            >
+              <div class="content">
+                <label for="">Kết quả thi tuyển</label>
+                <br />
+                <select class="form-control" id="khuVuc">
+                  <option value="X">Không thuộc khu vực ưu tiên</option>
+                  <option value="A">Khu vực A</option>
+                  <option value="B">Khu vực B</option>
+                  <option value="C">Khu vực C</option></select
+                ><br />
+                <select class="form-control" id="doiTuong">
+                  <option value="0">Không thuộc đối tượng ưu tiên</option>
+                  <option value="1">Đối tượng 1</option>
+                  <option value="2">Đối tượng 2</option>
+                  <option value="3">Đối tượng 3</option></select
+                ><br />
+
+                <input
+                  class="form-control"
+                  type="number"
+                  id="diemChuan"
+                  placeholder="Điểm chuẩn của hội đồng"
+                />
+                <br />
+                <input
+                  class="form-control"
+                  type="number"
+                  id="diemMon1"
+                  placeholder="Điểm môn thứ 1"
+                />
+                <br />
+                <input
+                  class="form-control"
+                  type="number"
+                  id="diemMon2"
+                  placeholder="Điểm môn thứ 2"
+                />
+                <br />
+                <input
+                  class="form-control"
+                  type="number"
+                  id="diemMon3"
+                  placeholder="Điểm môn thứ 3"
+                />
+                <br />
+
+                <button class="btn btn-danger" onclick="tinhKetQua()">
+                  Tính Kết quả
+                </button>
+                <div class="mt-2 alert alert-success">
+                  👉 <span id="ketQua"></span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="pills-bai2"
+              role="tabpanel"
+              aria-labelledby="pills-bai2-tab"
+            >
+              <div class="content">
+                <label for="">Tính tiền điện</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="hoTen"
+                  placeholder="Tên"
+                />
+                <br />
+                <input
+                  class="form-control"
+                  type="number"
+                  id="kw"
+                  placeholder="Số KW"
+                />
+                <br />
+                <button class="btn btn-danger" onclick="tinhTienDien()">
+                  Tính tiền điện
+                </button>
+                <div class="mt-2 alert alert-success">
+                  👉 <span id="tienDien"></span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="pills-bai3"
+              role="tabpanel"
+              aria-labelledby="pills-bai3-tab"
+            >
+              <div class="content">
+                <label for="">Quy đổi tiền tệ</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="soTien"
+                  placeholder="Nhập vào số tiền USD..."
+                />
+                <br />
+                <button class="btn btn-danger" onclick="quy_doi()">
+                  Quy đổi
+                </button>
+                <div class="mt-2 alert alert-success">
+                  👉 <span id="quyDoi"></span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="pills-bai4"
+              role="tabpanel"
+              aria-labelledby="pills-bai4-tab"
+            >
+              <div class="content">
+                <label for="">Tính tiền cáp</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="iDKhach"
+                  placeholder="Mã khách hàng"
+                />
+                <br />
+                <select class="form-control" id="loaiKhach">
+                  <option value="1">Nhà dân</option>
+                  <option value="2">Doanh nghiệp</option>
+                </select>
+                <br />
+                <input
+                  class="form-control"
+                  type="number"
+                  id="soKenhCaoCap"
+                  placeholder="Số kênh cao cấp"
+                />
+                <br />
+                <input
+                  class="form-control"
+                  type="number"
+                  id="soKetNoi"
+                  placeholder="Số kết nối"
+                />
+                <br />
+                <button class="btn btn-danger" onclick="tinhTienCap()">
+                  Tinh tiền cáp
+                </button>
+                <div class="mt-2 alert alert-success">
+                  👉 <span id="tienCap"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript --->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
