@@ -62,6 +62,37 @@ function tinhTienDien() {
 }
 
 // Bài 3
+function tinhTienThue() {
+  var hoTenNguoiTinhThue = document.getElementById("hoTenNguoiTinhThue").value;
+  var tongThuNhapNam = document.getElementById("tongThuNhapNam").value * 1;
+  var soNguoiPhuThuoc = document.getElementById("soNguoiPhuThuoc").value * 1;
+
+  var thuNhapChiuThue = tongThuNhapNam - 4000000 - soNguoiPhuThuoc * 1600000;
+
+  let thueSuat = 0;
+  if (thuNhapChiuThue <= 60000000) {
+    thueSuat = 5;
+  } else if (thuNhapChiuThue <= 120000000) {
+    thueSuat = 10;
+  } else if (thuNhapChiuThue <= 210000000) {
+    thueSuat = 15;
+  } else if (thuNhapChiuThue <= 384000000) {
+    thueSuat = 20;
+  } else if (thuNhapChiuThue <= 624000000) {
+    thueSuat = 25;
+  } else if (thuNhapChiuThue <= 960000000) {
+    thueSuat = 30;
+  } else {
+    thueSuat = 35;
+  }
+
+  var tongThue = thuNhapChiuThue * thueSuat / 100;
+
+  document.getElementById(`tienThue`).textContent = 'Họ và tên: ' + hoTenNguoiTinhThue + '     Tiền thuế: ' + tongThue.toLocaleString() + 'đ';
+}
+
+// // Khi form được submit
+// document.querySelector("form").addEventListener("submit", calculateTax);
 
 // Bài 4
 function tinhTienCap() {

@@ -169,19 +169,36 @@
               aria-labelledby="pills-bai3-tab"
             >
               <div class="content">
-                <label for="">Quy đổi tiền tệ</label>
+                <label for="">Tính thuế thu nhập</label>
                 <input
-                  type="number"
+                  type="text"
+                  name="hoTenNguoiTinhThue"
+                  id="hoTenNguoiTinhThue"
                   class="form-control"
-                  id="soTien"
-                  placeholder="Nhập vào số tiền USD..."
+                  placeholder="Nhập họ tên"
                 />
                 <br />
-                <button class="btn btn-danger" onclick="quy_doi()">
-                  Quy đổi
+                <input
+                  type="number"
+                  name="tongThuNhapNam"
+                  id="tongThuNhapNam"
+                  class="form-control"
+                  placeholder="Tổng thu nhập năm"
+                />
+                <br />
+                <input
+                  type="number"
+                  name="soNguoiPhuThuoc"
+                  id="soNguoiPhuThuoc"
+                  class="form-control"
+                  placeholder="Số người phụ thuộc"
+                />
+                <br />
+                <button class="btn btn-danger" onclick="tinhTienThue()">
+                  Tính tiền thuế
                 </button>
                 <div class="mt-2 alert alert-success">
-                  👉 <span id="quyDoi"></span>
+                  👉 <span id="tienThue"></span>
                 </div>
               </div>
             </div>

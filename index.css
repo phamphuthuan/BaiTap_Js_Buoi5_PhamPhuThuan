@@ -10,7 +10,7 @@
   margin-top: 11vh;
 }
 .container {
-  background-image: linear-gradient(pink, rgb(0, 58, 128));
+  background-image: linear-gradient(rgb(229, 192, 255), rgb(0, 115, 128));
   width: 100%;
   height: 100%;
   border-radius: 16px;
